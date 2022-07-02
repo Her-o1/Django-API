@@ -15,13 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from links import views
+# from links import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("api/links/", include("links.urls")),
-    path("create/", views.PostCreateApi.as_view(), name="api_create"),
-    path("update/<int:pk>", views.PostUpdateApi.as_view(), name="api_update"),
-    path("delete/<int:pk>", views.PostDeleteApi.as_view(), name="api_delete"),
-    path("", views.PostListApi.as_view(), name="api_list"),
+    path("api/links/", include("links.urls"))
 ]
